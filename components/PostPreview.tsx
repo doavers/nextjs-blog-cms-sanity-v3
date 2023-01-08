@@ -11,15 +11,17 @@ export default function PostPreview({
   excerpt,
   author,
   slug,
+  categories,
 }: Omit<Post, '_id'>) {
   return (
     <div>
-      <div className="mb-5">
+      <div className="group mb-5 cursor-pointer">
         <CoverImage
           slug={slug}
           title={title}
           image={coverImage}
           priority={false}
+          categories={categories}
         />
       </div>
       <h3 className="mb-3 text-3xl leading-snug">

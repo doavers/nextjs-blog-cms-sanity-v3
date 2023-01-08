@@ -39,11 +39,16 @@ export default defineType({
       },
       validation: (rule) => rule.required(),
     }),
+    // defineField({
+    //   name: 'content',
+    //   title: 'Content',
+    //   type: 'array',
+    //   of: [{ type: 'block' }],
+    // }),
     defineField({
       name: 'content',
       title: 'Content',
-      type: 'array',
-      of: [{ type: 'block' }],
+      type: 'blockContent',
     }),
     defineField({
       name: 'excerpt',
@@ -57,6 +62,12 @@ export default defineType({
       options: {
         hotspot: true,
       },
+    }),
+    defineField({
+      name: 'categories',
+      title: 'Categories',
+      type: 'array',
+      of: [{ type: 'reference', to: { type: 'category' } }],
     }),
     defineField({
       name: 'date',

@@ -10,11 +10,12 @@
 import { PortableText } from '@portabletext/react'
 
 import styles from './PostBody.module.css'
+import { RichTextComponents } from './RichTextComponents'
 
 export default function PostBody({ content }) {
   return (
     <div className={`mx-auto max-w-2xl ${styles.portableText}`}>
-      <PortableText value={content} />
+      <PortableText value={content} components={RichTextComponents} />
     </div>
   )
 }
